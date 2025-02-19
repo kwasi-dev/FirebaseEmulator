@@ -1,0 +1,15 @@
+services:
+  firebase:
+    hostname: firebase
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./data:/config:rw
+    environment:
+      - FIREBASE_TOKEN
+    ports:
+      - 4000:4000 # Firebase UI
+      - 9099:9099 # Firebase Auth
+    
+
